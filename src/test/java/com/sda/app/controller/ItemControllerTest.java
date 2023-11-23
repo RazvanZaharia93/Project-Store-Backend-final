@@ -27,12 +27,12 @@ public class ItemControllerTest {
     public void testGetAllProducts() throws Exception {
         Item item1 = new Item();
         item1.setId(1);
-        item1.setTitle("coffee");
+        item1.setTitle("Tropical");
         item1.setPrice(100.00);
         item1.setCategory(Category.SOFAS);
         Item item2 = new Item();
         item2.setId(2);
-        item2.setTitle("cola");
+        item2.setTitle("Primavera");
         item2.setPrice(200.00);
         item2.setCategory(Category.TABLES);
         List<Item> products = Arrays.asList(item1, item2);
@@ -41,10 +41,10 @@ public class ItemControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.data", IsCollectionWithSize.hasSize(2)))
                 .andExpect(jsonPath("$.data[0].id").value(1))
-                .andExpect(jsonPath("$.data[0].title").value("coffee"))
+                .andExpect(jsonPath("$.data[0].title").value("Tropical"))
                 .andExpect(jsonPath("$.data[0].price").value(100.00))
                 .andExpect(jsonPath("$.data[1].id").value(2))
-                .andExpect(jsonPath("$.data[1].title").value("cola"))
+                .andExpect(jsonPath("$.data[1].title").value("Primavera"))
                 .andExpect(jsonPath("$.data[1].price").value(200.00));
     }
     @Test

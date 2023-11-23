@@ -40,7 +40,7 @@ public class CartControllerTest {
         User user = new User();
         user.setUsername("user");
         Item item = new Item();
-        item.setTitle("coffee");
+        item.setTitle("Tropical");
         List<Item> items = new ArrayList<>();
         items.add(item);
         Cart cart = new Cart();

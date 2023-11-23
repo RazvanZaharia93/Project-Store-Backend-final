@@ -25,12 +25,12 @@ public class ItemServiceTest {
     public void testGetAllProducts() {
         Item item1 = new Item();
         item1.setId(1);
-        item1.setTitle("coffee");
+        item1.setTitle("Tropical");
         item1.setPrice(100.00);
         item1.setCategory(Category.SOFAS);
         Item item2 = new Item();
         item2.setId(2);
-        item2.setTitle("cola");
+        item2.setTitle("Primavera");
         item2.setPrice(200.00);
         item2.setCategory(Category.SOFAS);
         // Mock data
@@ -43,15 +43,15 @@ public class ItemServiceTest {
         List<Item> result = itemService.findAll();
         // Verify the result
         assertEquals(2, result.size());
-        assertEquals("coffee", result.get(0).getTitle());
-        assertEquals("cola", result.get(1).getTitle());
+        assertEquals("Tropical", result.get(0).getTitle());
+        assertEquals("Primavera", result.get(1).getTitle());
     }
     @Test
     public void testGetProductById() {
         // Mock data
         Item item1 = new Item();
         item1.setId(1);
-        item1.setTitle("coffee");
+        item1.setTitle("Tropical");
         item1.setPrice(100.00);
         item1.setCategory(Category.SOFAS);
         // Define the behavior of the repository mock
@@ -60,13 +60,13 @@ public class ItemServiceTest {
         Optional<Item> result = itemService.getById(1);
         // Verify the result
         assertEquals(true, result.isPresent());
-        assertEquals("coffee", result.get().getTitle());
+        assertEquals("Tropical", result.get().getTitle());
     }
     @Test
     public void testSaveProduct() {
         // Mock data
         Item item1 = new Item();
-        item1.setTitle("coffee");
+        item1.setTitle("Tropical");
         item1.setPrice(100.00);
         item1.setCategory(Category.SOFAS);
         // Call the service method
